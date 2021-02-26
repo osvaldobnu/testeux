@@ -1,0 +1,80 @@
+<div class="card">
+    <div class="p-grid p-justify-center">
+        <div class="p-col-1">
+            <div class="box">
+                <h3 *ngIf="listStole.length === 0 && !loading">
+                    No Results
+                </h3>
+            </div>
+        </div>
+        <div class="p-col-5">
+            <div class="box">
+                <div *ngIf="loading">
+                    <p-progressSpinner></p-progressSpinner>
+                </div>
+            </div>
+        </div>
+        <div class="p-col-3">
+            <div class="box" *ngIf="!loading">
+                <p>
+                    <label id="lblName"> {{total}} </label>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="p-grid p-justify-center">
+        <div class="p-col-1">
+            <div class="box">
+                <div class="p-text-left">
+
+                </div>
+            </div>
+        </div>
+        <div class="p-sm-12 p-md-12 p-lg-12 p-col-12">
+            <div class="box">
+                <h3 *ngIf="listStole.length >= 0">
+                    <p-table [value]="listStole" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
+                        currentPageReportTemplate="Show {first} of {last} of {totalRecords} records"
+                        [rowsPerPageOptions]="[10,25,50]">
+                        <ng-template pTemplate="body" let-stole>
+                            <tr>
+                                <td>
+                                    <p-card>
+                                        <div class="p-grid ">
+                                            <div class="p-sm-4 p-md-3 p-lg-3 p-col-2">
+                                                <div class="box">
+                                                    <div *ngIf="stole.media.image_url_thumb === null">
+                                                        <img src="../../../assets/img/no_image.png"
+                                                            style="width: 150px; height: 150px;" alt="">
+                                                    </div>
+                                                    <div *ngIf="stole.media.image_url_thumb != null">
+                                                        <img src={{stole.media.image_url_thumb}}
+                                                            style="width: 150px; height: 150px;" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-sm-8 p-md-9 p-lg-9 p-col-10">
+                                                <div class="box p-text-left">
+                                                    <a [routerLink]="['/details', stole.id, stole.lat, stole.lng]">{{ stole.title }}</a>
+                                                    <p>{{ stole.description | slice:0:100 }} ...</p>
+                                                    <p>{{ stole.occurred_at }} -
+                                                        {{stole.address}}</p>
+                                                </div>
+                                                <div class="box">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p-card>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </h3>
+            </div>
+        </div>
+        <div class="p-col-1">
+            <div class="box">
+            </div>
+        </div>
+    </div>
+</div>

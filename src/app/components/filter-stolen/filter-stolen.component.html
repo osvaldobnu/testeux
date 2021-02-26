@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="p-grid">
+        <div class="p-sm-12 p-md-3 p-lg-3 p-col-3 ">
+            <div class="box">
+                <input [(ngModel)]="description" placeholder="Search case description" type="text"
+                    pInputText>
+            </div>
+        </div>
+        <div class="p-sm-12 p-md-3 p-lg-3 p-col-3 ">
+            <div class="box">
+                <p-calendar [(ngModel)]="dateStart" dateFormat="dd/mm/yy" placeholder="From" [showIcon]="true"
+                    inputId="icon"></p-calendar>
+            </div>
+        </div>
+        <div class="p-sm-12 p-md-3 p-lg-3 p-col-3 ">
+            <div class="box">
+                <p-calendar [(ngModel)]="dateEnd" dateFormat="dd/mm/yy" placeholder="To" [showIcon]="true"
+                    inputId="icon"></p-calendar>
+            </div>
+        </div>
+        <div class="p-sm-12 p-md-3 p-lg-3 p-col-3 ">
+            <div class="box">
+                <button (click)="searchBikeStoles()" pButton type="button" label="Find cases"></button>
+            </div>
+        </div>
+    </div>
+</div>

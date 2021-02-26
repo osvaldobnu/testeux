@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="p-grid p-justify-center">
+        <div class="p-sm-3 p-col-3 p-md-3 p-lg-3">
+            <div class="box">
+                <img class="logo-style" src="../../../assets/img/logoTeste.png" alt="logo">
+            </div>
+        </div>
+        <div class="p-sm-9 p-col-9 p-md-9 p-lg-9">
+            <div class="box">
+                <h1 class="p-text-left title-style">Police Departament of Berlin</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="p-grid p-justify-center">
+        <div class="p-sm-3 p-col-1 p-md-1 p-lg-3">
+            <div class="box"></div>
+        </div>
+        <div class="p-sm-9 p-col-10 p-md-3 p-lg-9">
+            <div class="box">
+                <p class="p-text-left sub-title">
+                    Stolen bykes
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="isIndex === '1'"class="card">
+    <div class="p-grid p-justify-center">
+        <div class="p-sm-7 p-col-7 p-md-7 p-lg-7">
+            <div class="box">
+                <p>
+                    <app-filter-stolen></app-filter-stolen>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
